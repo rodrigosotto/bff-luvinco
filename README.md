@@ -34,7 +34,7 @@ API **Backend For Frontend (BFF)** em **Node.js + TypeScript** que faz a ponte
 
 ## 📂 Estrutura de Pastas
 
-````text
+```text
 src/
 ├── app.ts            # Instância principal do Express
 ├── routes/           # Definição de endpoints
@@ -136,5 +136,5 @@ Integração com gateway de pagamento real
 📝 Licença
 
 Distribuído sob a licença MIT. Veja LICENSE para detalhes.
-<p align="center">Feito com 💙 por <a href="https://github.com/rodrigosotto" target="_blank">Rodrigo</a></p> ```
-````
+Feito com 💙 por Jefferson Rodrigo Sotto
+```
