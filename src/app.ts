@@ -14,8 +14,8 @@ app.use(express.json());
 
 app.use("/api", routes);
 app.use("/api/pedidos", orderRoutes);
-app.use("/api/auth", authRoutes); // ⬅️ Isto monta a rota base
-// Rota de teste
+app.use("/api/auth", authRoutes);
+
 app.get("/", (req, res) => {
   res.send("API Luvinco está funcionando!");
 });
