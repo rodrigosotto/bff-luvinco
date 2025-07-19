@@ -120,8 +120,10 @@ POST http://localhost:3000/api/auth/registrar
 ```
 Authorization: Bearer SEU_TOKEN
 ```
+<img width="1318" height="488" alt="image" src="https://github.com/user-attachments/assets/bf925b2f-6a9a-471e-9c1e-c850c1aa0800" />
 
-![Token JWT](https://i.ibb.co/qY0M1sL/token.png)
+**Se quiser pode testar e verificar se esta logando**
+<img width="1307" height="411" alt="image" src="https://github.com/user-attachments/assets/3b5ce8fb-d5d7-408a-b2ad-7cad58451b52" />
 
 ---
 
