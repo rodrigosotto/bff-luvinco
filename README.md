@@ -108,7 +108,8 @@ POST http://localhost:3000/api/auth/registrar
 }
 ```
 
-![Usuário registrado](https://i.ibb.co/bgLHDM2b/REGISTRADO.png)
+<img width="1309" height="462" alt="image" src="https://github.com/user-attachments/assets/23476809-56bb-40bc-8300-3c1dc994b339" />
+
 
 ---
 
