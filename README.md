@@ -2,8 +2,6 @@
 
 API **Backend For Frontend (BFF)** em **Node.js + TypeScript** que faz a ponte entre o frontend da loja Luvinco e serviços externos/internos, centralizando regras de negócio e simplificando o consumo de dados pelo cliente web.
 
----
-
 ## 📌 Visão Geral
 
 - 🌐 API REST baseada em **Express**
@@ -24,11 +22,8 @@ API **Backend For Frontend (BFF)** em **Node.js + TypeScript** que faz a ponte e
 | Config    | **dotenv** (variáveis de ambiente) |
 | Deploy    | **Docker** / **Docker Compose**    |
 
----
 
 ## 📂 Estrutura de Pastas
-
-```text
 src/
 ├── app.ts            # Instância principal do Express
 ├── routes/           # Definição de endpoints
