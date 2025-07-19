@@ -1,8 +1,4 @@
-# 🧠 BFF Luvinco
-
-<!-- opcional: badges de build, cobertura, licença -->
-<!-- ![Build](https://img.shields.io/github/actions/workflow/status/rodrigosotto/bff-luvinco/ci.yml?branch=main) -->
-<!-- ![License](https://img.shields.io/github/license/rodrigosotto/bff-luvinco) -->
+# 🧠 BFF Desafio LuvinCo
 
 API **Backend For Frontend (BFF)** em **Node.js + TypeScript** que faz a ponte entre o frontend da loja Luvinco e serviços externos/internos, centralizando regras de negócio e simplificando o consumo de dados pelo cliente web.
 
@@ -20,15 +16,13 @@ API **Backend For Frontend (BFF)** em **Node.js + TypeScript** que faz a ponte
 
 ## 🔧 Tecnologias
 
-| Categoria | Ferramenta                                  |
-| --------- | ------------------------------------------- |
-| Runtime   | **Node.js LTS**                             |
-| Framework | **Express**                                 |
-| Linguagem | **TypeScript**                              |
-| HTTP      | **Axios** (requisições a serviços externos) |
-| Config    | **dotenv** (variáveis de ambiente)          |
-| Dev       | **Nodemon** (hot‑reload)                    |
-| Deploy    | **Docker** / **Docker Compose**             |
+| Categoria | Ferramenta                         |
+| --------- | ---------------------------------- |
+| Runtime   | **Node.js LTS**                    |
+| Framework | **Express**                        |
+| Linguagem | **TypeScript**                     |
+| Config    | **dotenv** (variáveis de ambiente) |
+| Deploy    | **Docker** / **Docker Compose**    |
 
 ---
 
@@ -56,47 +50,49 @@ npm install
 3 — Configurar variáveis de ambiente
 
 Crie o arquivo .env a partir do template:
+.env.example (dados de conexão banco local e api externa para fim de testes)
 
-cp .env.example .env
 
-Preencha valores, por exemplo:
+✅ Para subir os container com docker-compose você precisa ter o DOCKER instalado em seu sistema.
+https://docs.docker.com/desktop/setup/install/windows-install/
+https://docs.docker.com/engine/install/ubuntu/
 
-PORT=3000
-PRODUCTS_API_URL=https://api.exemplo.com/produtos
+🐳 Se você estiver usando Linux
 
-4 — Rodar em modo desenvolvimento
+4 — Rodar script bash para iniciar o container e o banco de dados (linux)
+ -chmod +x start.sh
 
-npm run dev
-# Acesse em http://localhost:3000
+5 - Rodar comando que sobe os containers definidos no docker-compose.yml
+ -docker-compose up --build
 
-5 — Build & Prod
+  🐳 Se você estiver usando Windows
 
-npm run build       # gera dist/
-npm start           # executa dist/index.js
+6 -
+7 -
 
-🐳 Docker
+https://i.ibb.co/d0t2FjJm/CONECTADO.png
 
-Para subir tudo em containers:
+6 Próximo Passo será registrar um usuário para logar no sistema, você pode usar postman ou insominia.
 
-docker-compose up --build
+ -POST http://localhost:3000/api/auth/registrar
+ -BODY
+ {
+  "nome": "admin",
+  "email": "admin@teste.com",
+  "senha": "teste123"
+}
 
-Isso cria uma imagem do app e o expõe na porta definida em docker-compose.yml.
-🔗 Endpoints Principais (exemplo)
-Método	Rota	Descrição
-GET	/products	Lista todos os produtos
-GET	/products/:id	Detalhes de um produto
-POST	/cart	Adiciona itens ao carrinho
-GET	/cart	Recupera o carrinho atual
-POST	/checkout	Finaliza um pedido
+[ADICIONAR IMAGEM DO INSOMNIA COM UM USUARIO REGISTRADO](https://i.ibb.co/bgLHDM2b/REGISTRADO.png)
 
-    Ajuste conforme as rotas realmente implementadas.
+7 - Feito o registro do usuário, conforme print acima, você deve copiar o token para usar no HEADER Authorization Bearer
 
-🧪 Scripts Disponíveis
-Comando	Descrição
-npm run dev	Inicia com Nodemon (hot‑reload)
-npm start	Executa em modo produção (dist/)
-npm run build	Transpila TypeScript para JavaScript
-npm run lint	(Opcional) executa o linter configurado
+(https://i.ibb.co/qY0M1sLK/token.png)
+https://i.ibb.co/78tk8Cm/logado.png
+
+8 - Agora acesse o frontend angular e voce já poderá efetuar o login com o email e senha que você criou anteriormente
+https://i.ibb.co/bMSJNmCf/login-Page.png
+
+
 ✅ Boas Práticas Aplicadas
 
     🔒 Configuração via dotenv
@@ -109,32 +105,6 @@ npm run lint	(Opcional) executa o linter configurado
 
     🐳 Ambiente reproduzível com Docker
 
-📈 Roadmap / Melhorias Futuras
-
-Autenticação JWT/OAuth
-
-Testes unitários e de integração (Jest + Supertest)
-
-Cache (Redis) para endpoints de produtos
-
-Integração com gateway de pagamento real
-
-    Observabilidade (logs estruturados, Prometheus)
-
-🤝 Como Contribuir
-
-    Fork do projeto
-
-    Crie sua branch: git checkout -b minha-feature
-
-    Commit: git commit -m 'feat: Minha feature'
-
-    Push: git push origin minha-feature
-
-    Abra um Pull Request
-
 📝 Licença
-
-Distribuído sob a licença MIT. Veja LICENSE para detalhes.
 Feito com 💙 por Jefferson Rodrigo Sotto
 ```
