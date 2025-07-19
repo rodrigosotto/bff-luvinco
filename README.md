@@ -1,13 +1,15 @@
 # 🧠 BFF Desafio LuvinCo
 
-API **Backend For Frontend (BFF)** em **Node.js + TypeScript** que faz a ponte entre o frontend da loja Luvinco e serviços externos/internos, centralizando regras de negócio e simplificando o consumo de dados pelo cliente web.
+API **Backend For Frontend (BFF)** em **Node.js + TypeScript** que faz a ponte entre o frontend da loja Luvinco e serviços externos/internos, centralizando regras de negócio e simplificando o consumo de dados pelo cliente web.
+
+---
 
 ## 📌 Visão Geral
 
 - 🌐 API REST baseada em **Express**
 - ⚙️ Projetada em **TypeScript**
 - 📁 Arquitetura modular (Routes → Controllers → Services)
-- 🐳 Containerizada com **Docker** / **Docker Compose**
+- 🐳 Containerizada com **Docker** / **Docker Compose**
 - 🔁 Pronta para escalar e estender
 
 ---
@@ -16,14 +18,17 @@ API **Backend For Frontend (BFF)** em **Node.js + TypeScript** que faz a ponte e
 
 | Categoria | Ferramenta                         |
 | --------- | ---------------------------------- |
-| Runtime   | **Node.js LTS**                    |
+| Runtime   | **Node.js LTS**                    |
 | Framework | **Express**                        |
 | Linguagem | **TypeScript**                     |
 | Config    | **dotenv** (variáveis de ambiente) |
-| Deploy    | **Docker** / **Docker Compose**    |
+| Deploy    | **Docker** / **Docker Compose**    |
 
+---
 
 ## 📂 Estrutura de Pastas
+
+```text
 src/
 ├── app.ts            # Instância principal do Express
 ├── routes/           # Definição de endpoints
@@ -31,77 +36,112 @@ src/
 ├── services/         # Regras de negócio
 ├── types/            # Tipagens/Interfaces TS
 └── utils/            # Funções auxiliares
+```
 
-🚀 Instalação e Uso
-1 — Clonar o repositório
+---
 
+## 🚀 Instalação e Uso
+
+### 1 — Clonar o repositório
+
+```bash
 git clone https://github.com/rodrigosotto/bff-luvinco.git
 cd bff-luvinco
+```
 
-2 — Instalar dependências
+### 2 — Instalar dependências
 
+```bash
 npm install
+```
 
-3 — Configurar variáveis de ambiente
+### 3 — Configurar variáveis de ambiente
 
-Crie o arquivo .env a partir do template .env.example
+Crie o arquivo `.env` a partir do template `.env.example`  
 (Dados de conexão com banco local e API externa para fins de testes)
 
-✅ Para subir os containers com Docker Compose, você precisa ter o Docker instalado:
+---
 
-    Instalar no Windows
+✅ Para subir os containers com Docker Compose, você precisa ter o **Docker** instalado:
 
-    Instalar no Linux (Ubuntu)
+- [Instalar no Windows](https://docs.docker.com/desktop/setup/install/windows-install/)
+- [Instalar no Linux (Ubuntu)](https://docs.docker.com/engine/install/ubuntu/)
 
-🐳 Se você estiver usando Linux:
-4 — Dar permissão de execução ao script:
+---
 
+### 🐳 Se você estiver usando Linux:
+
+#### 4 — Dar permissão de execução ao script:
+
+```bash
 chmod +x start.sh
+```
 
-5 — Subir os containers com Docker Compose:
+#### 5 — Subir os containers com Docker Compose:
 
+```bash
 docker-compose up --build
+```
 
-Containers conectados
-🐳 Se você estiver usando Windows:
+![Containers conectados](https://i.ibb.co/d0t2FjJm/CONECTADO.png)
+
+---
+
+### 🐳 Se você estiver usando Windows:
 
 (Siga os mesmos passos acima usando o PowerShell ou CMD com Docker Desktop rodando)
-6 — Registrar um usuário (via Postman ou Insomnia)
 
+---
+
+### 6 — Registrar um usuário (via Postman ou Insomnia)
+
+```http
 POST http://localhost:3000/api/auth/registrar
+```
 
-BODY (JSON):
-
+**BODY (JSON):**
+```json
 {
   "nome": "admin",
   "email": "admin@teste.com",
   "senha": "teste123"
 }
+```
 
-Usuário registrado
-7 — Copie o token JWT retornado para usar nos headers da API
+![Usuário registrado](https://i.ibb.co/bgLHDM2b/REGISTRADO.png)
 
-Use no header Authorization:
+---
 
+### 7 — Copie o token JWT retornado para usar nos headers da API
+
+**Use no header Authorization:**
+
+```
 Authorization: Bearer SEU_TOKEN
+```
 
-8 — Faça login no frontend Angular
+![Token JWT](https://i.ibb.co/qY0M1sL/token.png)
+
+---
+
+### 8 — Faça login no frontend Angular
 
 Use o e-mail e a senha cadastrados para testar:
 
-Tela de login
-✅ Boas Práticas Aplicadas
+![Tela de login](https://i.ibb.co/bMSJNmCf/login-Page.png)
 
-    🔒 Configuração via dotenv
+---
 
-    🔁 Separação clara de camadas (Rotas → Controllers → Services)
+## ✅ Boas Práticas Aplicadas
 
-    💬 Tipagem estática robusta (Interfaces/Types)
+- 🔒 Configuração via dotenv
+- 🔁 Separação clara de camadas (Rotas → Controllers → Services)
+- 💬 Tipagem estática robusta (Interfaces/Types)
+- 🧼 Middlewares de log e tratamento de erros
+- 🐳 Ambiente reproduzível com Docker
 
-    🧼 Middlewares de log e tratamento de erros
+---
 
-    🐳 Ambiente reproduzível com Docker
+## 📝 Licença
 
-📝 Licença
-
-Feito com 💙 por Jefferson Rodrigo Sotto
+Feito com 💙 por **Jefferson Rodrigo Sotto**
