@@ -1,4 +1,5 @@
 # 🧠 BFF Desafio LuvinCo
+https://bff-luvinco.onrender.com/
 
 API **Backend For Frontend (BFF)** em **Node.js + TypeScript** que faz a ponte entre o frontend da loja Luvinco e serviços externos/internos, centralizando regras de negócio e simplificando o consumo de dados pelo cliente web.
 
@@ -144,6 +145,8 @@ Use o e-mail e a senha cadastrados para testar:
 - 🐳 Ambiente reproduzível com Docker
 
 ---
+
+- Link da API https://bff-luvinco.onrender.com/
 
 ## 📝 Licença
 
